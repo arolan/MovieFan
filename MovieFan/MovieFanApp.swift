@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct MovieFanApp: App {
+    let viewModel = MoviesViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                MoviesView()
+                    .environmentObject(viewModel)  
+            }
         }
     }
 }
